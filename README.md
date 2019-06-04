@@ -10,6 +10,8 @@ An Android app that will stop all playing media on the phone at a set time
 
 This project was inspired by wanting to play music as you relax late at night and have it turn off automatically after falling asleep. Unfortunately, the native Android alarm apps have no capability to do this.
 
+This is a Kotlin fork of the <a href="https://github.com/jtymburski/drift-off-java">original Java app</a>
+
 <a href="https://source.android.com/setup/start/build-numbers" alt="Android Build">
     <img src="https://img.shields.io/badge/android-6.0%2B-blue.svg" /></a>
 

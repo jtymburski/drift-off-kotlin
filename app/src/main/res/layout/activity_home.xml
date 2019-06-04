@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".presentation.HomeActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+
+        <TextView
+            android:id="@+id/time_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="sans-serif-light"
+            android:textColor="@android:color/white"
+            android:textSize="82sp"
+            tools:text="12:30" />
+
+        <TextView
+            android:id="@+id/time_period"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/time_text"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@+id/time_text"
+            android:fontFamily="sans-serif-light"
+            android:letterSpacing="0.15"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            tools:text="pm" />
+
+        <TextView
+            android:id="@+id/time_remaining"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/time_text"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:letterSpacing="0.1"
+            android:textAllCaps="true"
+            android:textColor="@color/textActive"
+            tools:text="Stops music in 6 hours" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ImageButton
+            android:id="@+id/run_button"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center"
+            android:background="@drawable/circle_outline"
+            android:padding="12dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_play"
+            android:contentDescription="@null" />
+    </FrameLayout>
+</LinearLayout>

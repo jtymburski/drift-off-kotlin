@@ -1,0 +1,18 @@
+<resources>
+
+    <!-- Application theme for Dark (default) -->
+    <style name="AppTheme" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:colorPrimary">@color/primary</item>
+        <item name="android:colorPrimaryDark">@color/primaryDark</item>
+        <item name="android:colorAccent">@color/accent</item>
+        <item name="android:windowBackground">@raw/background</item>
+    </style>
+
+    <!-- Application theme for Light -->
+    <style name="AppTheme.Light" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:colorPrimary">@color/primary_light</item>
+        <item name="android:colorPrimaryDark">@color/primaryDark_light</item>
+        <item name="android:colorAccent">@color/accent_light</item>
+        <item name="android:windowBackground">@raw/background_light</item>
+    </style>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#212121</color>
+    <color name="primary_light">#4c9cb4</color>
+
+    <color name="primaryDark">#000</color>
+    <color name="primaryDark_light">#549cac</color>
+
+    <color name="accent">#212121</color>
+    <color name="accent_light">#4c9cb4</color>
+
+    <color name="textActive">#8FFF</color>
+    <color name="textEdit">#FFF</color>
+</resources>

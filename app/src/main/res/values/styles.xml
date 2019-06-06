@@ -9,7 +9,7 @@
     </style>
 
     <!-- Application theme for Light -->
-    <style name="AppTheme.Light" parent="android:Theme.Material.Light.NoActionBar">
+    <style name="AppTheme_Light" parent="android:Theme.Material.Light.NoActionBar">
         <item name="android:colorPrimary">@color/primary_light</item>
         <item name="android:colorPrimaryDark">@color/primaryDark_light</item>
         <item name="android:colorAccent">@color/accent_light</item>

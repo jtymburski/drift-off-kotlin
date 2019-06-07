@@ -11,5 +11,4 @@ import javax.inject.Singleton
     AndroidInjectionModule::class,
     HomeActivityModule::class
 ])
-interface AppComponent: AndroidInjector<App> {
-}
+interface AppComponent: AndroidInjector<App>

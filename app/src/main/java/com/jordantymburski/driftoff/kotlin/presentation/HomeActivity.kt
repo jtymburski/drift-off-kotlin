@@ -6,8 +6,10 @@ import android.view.WindowManager
 import androidx.fragment.app.FragmentActivity
 import com.jordantymburski.driftoff.kotlin.R
 import com.jordantymburski.driftoff.kotlin.domain.model.AlarmInfo
+import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_home.*
 import java.util.Calendar
+import javax.inject.Inject
 
 class HomeActivity : FragmentActivity() {
     companion object {
@@ -28,7 +30,8 @@ class HomeActivity : FragmentActivity() {
     /**
      * View model factory
      */
-    private val modelFactory = HomeViewModelFactory()
+    @Inject
+    lateinit var modelFactory: HomeViewModelFactory
 
     /**
      * Current model info
@@ -40,6 +43,7 @@ class HomeActivity : FragmentActivity() {
      * ---------------------------------------------- */
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
 
         // Content and theme

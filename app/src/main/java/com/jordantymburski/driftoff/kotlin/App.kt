@@ -2,6 +2,7 @@ package com.jordantymburski.driftoff.kotlin
 
 import android.app.Activity
 import android.app.Application
+import com.jordantymburski.driftoff.kotlin.di.AppModule
 import com.jordantymburski.driftoff.kotlin.di.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
@@ -14,7 +15,9 @@ class App: Application(), HasActivityInjector {
     override fun onCreate() {
         super.onCreate()
 
-        component(DaggerAppComponent.create())
+        component(DaggerAppComponent.builder()
+            .appModule(AppModule(this))
+            .build())
     }
 
     override fun activityInjector(): DispatchingAndroidInjector<Activity> {

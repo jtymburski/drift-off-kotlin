@@ -21,7 +21,26 @@ class GetInfo @Inject constructor(
      */
     val observable = MutableLiveData<AlarmInfo>()
 
+    /**
+     * Initialization. Loads the current info asynchronously for any observers
+     */
     init {
         GlobalScope.launch { observable.postValue(storage.load()) }
+    }
+
+    /**
+     * Fetches the current info object
+     * @return alarm details
+     */
+    internal fun current() : AlarmInfo {
+        return observable.value ?: storage.load()
+    }
+
+    /**
+     * Posts to any active observer the newly provided info
+     * @param info new info object
+     */
+    internal fun post(info: AlarmInfo) {
+        observable.postValue(info)
     }
 }

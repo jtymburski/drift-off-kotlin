@@ -1,22 +1,28 @@
 package com.jordantymburski.driftoff.kotlin.presentation
 
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelStoreOwner
+import androidx.lifecycle.*
 import com.jordantymburski.driftoff.kotlin.domain.model.AlarmInfo
+import com.jordantymburski.driftoff.kotlin.domain.usecase.GetInfo
 
-class HomeViewModel : ViewModel() {
+/**
+ * View model manager of the home activity
+ * @param getInfo use case to get the current alarm information
+ */
+class HomeViewModel(private val getInfo: GetInfo) : ViewModel() {
     /**
-     * Observable wrapper that the connected activity can monitor for changes
+     * Fetches the info observable for usage by the holding activity
+     * @return life-cycle aware observable
      */
-    val infoObservable = MutableLiveData<AlarmInfo>()
-
-    init {
-        infoObservable.postValue(AlarmInfo())
+    fun observable(): LiveData<AlarmInfo> {
+        return getInfo.observable
     }
 
     companion object {
+        /**
+         * Static fetch to create an instance of this class using the factory
+         * @param owner the activity owner that will hold the view model
+         * @param factory the creator that can generate an instance of this home view model
+         */
         fun getInstance(owner: ViewModelStoreOwner, factory: ViewModelProvider.Factory) : HomeViewModel {
             return ViewModelProvider(owner, factory).get(HomeViewModel::class.java)
         }

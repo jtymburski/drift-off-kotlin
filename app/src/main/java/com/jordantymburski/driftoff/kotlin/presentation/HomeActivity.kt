@@ -61,7 +61,7 @@ class HomeActivity : FragmentActivity() {
 
         // Create model and start observing the view model for data changes
         model = HomeViewModel.getInstance(this, modelFactory)
-        model.infoObservable.observe(this, androidx.lifecycle.Observer {
+        model.observable().observe(this, androidx.lifecycle.Observer {
             if (modelInfo != it) {
                 modelInfo = it
                 updateView()

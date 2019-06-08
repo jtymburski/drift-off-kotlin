@@ -28,4 +28,12 @@ data class AlarmInfo(
         }
         return c
     }
+
+    /**
+     * Calculates the unix epoch time that matches the time setpoint
+     * @return in milliseconds
+     */
+    fun getTimeInMillis(): Long {
+        return getTime().timeInMillis
+    }
 }

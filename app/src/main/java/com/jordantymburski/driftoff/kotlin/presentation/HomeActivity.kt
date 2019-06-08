@@ -39,7 +39,7 @@ class HomeActivity : FragmentActivity() {
     private var modelInfo = AlarmInfo()
 
     /* ----------------------------------------------
-     * PRIVATE FUNCTIONS
+     * FragmentActivity OVERRIDES
      * ---------------------------------------------- */
 
     override fun onCreate(savedInstanceState: Bundle?) {

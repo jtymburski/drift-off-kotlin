@@ -5,6 +5,6 @@ import androidx.test.platform.app.InstrumentationRegistry
 
 object ContextProvider {
     fun get(): Context {
-        return InstrumentationRegistry.getInstrumentation().context
+        return InstrumentationRegistry.getInstrumentation().targetContext
     }
 }

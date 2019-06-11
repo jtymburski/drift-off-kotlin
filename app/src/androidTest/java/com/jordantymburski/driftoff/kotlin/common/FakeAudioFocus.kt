@@ -18,7 +18,7 @@ class FakeAudioFocus(
     /**
      * The focus request for the fake stream
      */
-    private var focusRequest: AudioFocusRequest? = null;
+    private var focusRequest: AudioFocusRequest? = null
 
     /**
      * Last focus change

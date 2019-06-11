@@ -1,6 +1,7 @@
 package com.jordantymburski.driftoff.kotlin.domain.model
 
 import java.util.Calendar
+import java.util.concurrent.TimeUnit
 
 /**
  * Current alarm information including active requested alarms and set visible time points
@@ -13,13 +14,28 @@ data class AlarmInfo(
     val timeHour: Int = 21,
     val timeMinute: Int = 30
 ) {
+    /* ----------------------------------------------
+     * PRIVATE FUNCTIONS
+     * ---------------------------------------------- */
+
+    private fun getMillisTillAlarm(): Long {
+        val systemTime = System.currentTimeMillis()
+        return if (alarm > systemTime) alarm - systemTime
+        else 0L
+    }
+
+    /* ----------------------------------------------
+     * PUBLIC FUNCTIONS
+     * ---------------------------------------------- */
+
     /**
      * Calculates the hours till the alarm will trigger. This is rounded up:
      * 1 to 60 minutes = 1 hour, 61 to 120 minutes  = 2 hours, etc
      * @return in hours
      */
     fun getHoursTillAlarm(): Long {
-        TODO("Alarm info get hours till alarm")
+        return TimeUnit.MILLISECONDS.toHours(
+            getMillisTillAlarm() + TimeUnit.HOURS.toMillis(1) - 1)
     }
 
     /**
@@ -28,7 +44,8 @@ data class AlarmInfo(
      * @return in minutes
      */
     fun getMinutesTillAlarm(): Long {
-        TODO("Alarm info get minutes till alarm")
+        return TimeUnit.MILLISECONDS.toMinutes(
+            getMillisTillAlarm() + TimeUnit.MINUTES.toMillis(1) - 1)
     }
 
     /**
@@ -60,6 +77,6 @@ data class AlarmInfo(
      * @return TRUE if alarm is active. FALSE if off
      */
     fun isActive(): Boolean {
-        TODO("Alarm info is active")
+        return alarm > System.currentTimeMillis()
     }
 }

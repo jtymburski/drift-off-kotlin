@@ -14,6 +14,24 @@ data class AlarmInfo(
     val timeMinute: Int = 30
 ) {
     /**
+     * Calculates the hours till the alarm will trigger. This is rounded up:
+     * 1 to 60 minutes = 1 hour, 61 to 120 minutes  = 2 hours, etc
+     * @return in hours
+     */
+    fun getHoursTillAlarm(): Long {
+        TODO("Alarm info get hours till alarm")
+    }
+
+    /**
+     * Calculates the minutes till the alarm will trigger. This is rounded up:
+     * 1 to 60 seconds = 1 minute, 61 to 120 seconds = 2 minutes, etc
+     * @return in minutes
+     */
+    fun getMinutesTillAlarm(): Long {
+        TODO("Alarm info get minutes till alarm")
+    }
+
+    /**
      * Assembles the time setpoint
      * @return a calendar object
      */
@@ -35,5 +53,13 @@ data class AlarmInfo(
      */
     fun getTimeInMillis(): Long {
         return getTime().timeInMillis
+    }
+
+    /**
+     * Is the alarm active and waiting to trigger to stop any playing music?
+     * @return TRUE if alarm is active. FALSE if off
+     */
+    fun isActive(): Boolean {
+        TODO("Alarm info is active")
     }
 }

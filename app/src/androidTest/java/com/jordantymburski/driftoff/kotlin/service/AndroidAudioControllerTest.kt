@@ -14,7 +14,7 @@ class AndroidAudioControllerTest {
         fakeFocus.request()
 
         // Now run the controller service implementation and make sure focus is lost on the fake stream
-        TODO("Make request to audio controller service")
+        AndroidAudioController().requestFocus()
         fakeFocus.waitForChange()
 
         // Check the focus change

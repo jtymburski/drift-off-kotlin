@@ -11,12 +11,12 @@ class StopAudioTest {
     /**
      * Audio controller mock class
      */
-    @Mock lateinit var audioController: AudioController
+    @Mock private lateinit var audioController: AudioController
 
     /**
      * Set info mock class
      */
-    @Mock lateinit var setInfo: SetInfo
+    @Mock private lateinit var setInfo: SetInfo
 
     /**
      * Stop audio use case for the core of the test

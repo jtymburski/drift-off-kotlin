@@ -1,6 +1,8 @@
-package com.jordantymburski.driftoff.kotlin.di
+package com.jordantymburski.driftoff.kotlin.di.test
 
 import com.jordantymburski.driftoff.kotlin.App
+import com.jordantymburski.driftoff.kotlin.di.HomeActivityModule
+import com.jordantymburski.driftoff.kotlin.di.ReceiverModule
 import dagger.Component
 import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector
@@ -9,10 +11,8 @@ import javax.inject.Singleton
 @Singleton
 @Component(modules = [
     AndroidInjectionModule::class,
-    AppModule::class,
-    DataModule::class,
+    MockDomainModule::class,
     HomeActivityModule::class,
-    ReceiverModule::class,
-    ServiceModule::class
+    ReceiverModule::class
 ])
-interface AppComponent: AndroidInjector<App>
+interface MockAppComponent: AndroidInjector<App>

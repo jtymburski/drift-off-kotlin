@@ -13,12 +13,12 @@ class RescheduleAlarmTest {
     /**
      * Alarm scheduling port
      */
-    @Mock lateinit var alarmScheduler: AlarmScheduler
+    @Mock private lateinit var alarmScheduler: AlarmScheduler
 
     /**
      * Get alarm info use case to fetch existing cached value
      */
-    @Mock lateinit var getInfo: GetInfo
+    @Mock private lateinit var getInfo: GetInfo
 
     /**
      * Random number generator instance

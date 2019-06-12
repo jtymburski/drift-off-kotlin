@@ -1,10 +1,11 @@
 package com.jordantymburski.driftoff.kotlin.domain.usecase
 
+import com.jordantymburski.driftoff.kotlin.domain.OpenForTest
 import com.jordantymburski.driftoff.kotlin.domain.adapter.AlarmScheduler
 import javax.inject.Inject
 import javax.inject.Singleton
 
-@Singleton
+@Singleton @OpenForTest
 class RescheduleAlarm @Inject constructor(
     private val alarmScheduler: AlarmScheduler,
     private val getInfo: GetInfo

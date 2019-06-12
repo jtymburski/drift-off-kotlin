@@ -1,5 +1,6 @@
 package com.jordantymburski.driftoff.kotlin.domain.usecase
 
+import com.jordantymburski.driftoff.kotlin.domain.OpenForTest
 import com.jordantymburski.driftoff.kotlin.domain.adapter.AudioController
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -9,7 +10,7 @@ import javax.inject.Singleton
  * @param audioController Audio managing controller port
  * @param setInfo Set alarm info use case to modify existing persisted values
  */
-@Singleton
+@Singleton @OpenForTest
 class StopAudio @Inject constructor(
     private val audioController: AudioController,
     private val setInfo: SetInfo

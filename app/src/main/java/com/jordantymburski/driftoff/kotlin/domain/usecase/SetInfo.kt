@@ -1,5 +1,6 @@
 package com.jordantymburski.driftoff.kotlin.domain.usecase
 
+import com.jordantymburski.driftoff.kotlin.domain.OpenForTest
 import com.jordantymburski.driftoff.kotlin.domain.adapter.AlarmScheduler
 import com.jordantymburski.driftoff.kotlin.domain.adapter.Storage
 import com.jordantymburski.driftoff.kotlin.domain.model.AlarmInfo
@@ -14,7 +15,7 @@ import javax.inject.Singleton
  * @param getInfo use case to get the current alarm information
  * @param storage persisted storage implementation
  */
-@Singleton
+@Singleton @OpenForTest
 class SetInfo @Inject constructor(
     private val alarmScheduler: AlarmScheduler,
     private val getInfo: GetInfo,

@@ -21,6 +21,17 @@ android {
     }
 }
 
+// Only allow open mockable annotation when running test variants
+android.applicationVariants.all { variant ->
+    boolean hasTest = gradle.startParameter.taskNames.find {it.contains("test") || it.contains("Test")} != null
+    if (hasTest) {
+        apply plugin: 'kotlin-allopen'
+        allOpen {
+            annotation('com.jordantymburski.driftoff.kotlin.domain.OpenForTest')
+        }
+    }
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"

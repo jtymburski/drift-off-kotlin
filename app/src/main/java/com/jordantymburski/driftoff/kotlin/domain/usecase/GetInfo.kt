@@ -1,6 +1,7 @@
 package com.jordantymburski.driftoff.kotlin.domain.usecase
 
 import androidx.lifecycle.MutableLiveData
+import com.jordantymburski.driftoff.kotlin.domain.OpenForTest
 import com.jordantymburski.driftoff.kotlin.domain.adapter.Storage
 import com.jordantymburski.driftoff.kotlin.domain.model.AlarmInfo
 import kotlinx.coroutines.GlobalScope
@@ -12,7 +13,7 @@ import javax.inject.Singleton
  * Use case to get the current alarm information and observe for changes
  * @param storage connection to the storage layer. Used to fetch current persisted state
  */
-@Singleton
+@Singleton @OpenForTest
 class GetInfo @Inject constructor(
     private val storage: Storage
 ) {

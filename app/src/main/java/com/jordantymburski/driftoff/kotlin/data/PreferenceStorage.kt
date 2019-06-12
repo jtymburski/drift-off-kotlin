@@ -1,6 +1,7 @@
 package com.jordantymburski.driftoff.kotlin.data
 
 import android.content.Context
+import androidx.annotation.VisibleForTesting
 import com.jordantymburski.driftoff.kotlin.domain.adapter.Storage
 import com.jordantymburski.driftoff.kotlin.domain.model.AlarmInfo
 
@@ -20,6 +21,15 @@ class PreferenceStorage(context: Context): Storage {
      * Shared preference database connection
      */
     private val database = context.getSharedPreferences(STORE_NAME, Context.MODE_PRIVATE)
+
+    /**
+     * Delete all keys in the preference database
+     */
+    @SuppressWarnings("ApplySharedPref")
+    @VisibleForTesting
+    internal fun deleteAll() {
+        database.edit().clear().commit()
+    }
 
     /**
      * Load all data from the shared preference storage

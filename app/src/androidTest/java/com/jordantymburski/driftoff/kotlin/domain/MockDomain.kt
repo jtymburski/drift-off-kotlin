@@ -61,7 +61,7 @@ class MockDomain {
      * Clears all existing history of function calls for all domain use cases
      */
     fun clearInvocations() {
-        Mockito.clearInvocations(getAll())
+        Mockito.clearInvocations(*getAll())
     }
 
     /**

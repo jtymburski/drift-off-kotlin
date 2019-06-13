@@ -1,5 +1,6 @@
 package com.jordantymburski.driftoff.kotlin.presentation
 
+import android.app.TimePickerDialog
 import android.os.Bundle
 import android.text.format.DateFormat
 import android.view.WindowManager
@@ -37,6 +38,11 @@ class HomeActivity : FragmentActivity() {
      * Current model info
      */
     private var modelInfo = AlarmInfo()
+
+    /**
+     * Last time picker dialog that was opened and is still active
+     */
+    var timePicker: TimePickerDialog? = null
 
     /* ----------------------------------------------
      * FragmentActivity OVERRIDES

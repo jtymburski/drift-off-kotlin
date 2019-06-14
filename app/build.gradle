@@ -27,7 +27,7 @@ android.applicationVariants.all { variant ->
     if (hasTest) {
         apply plugin: 'kotlin-allopen'
         allOpen {
-            annotation('com.jordantymburski.driftoff.kotlin.domain.OpenForTest')
+            annotation('com.jordantymburski.driftoff.domain.OpenForTest')
         }
     }
 }

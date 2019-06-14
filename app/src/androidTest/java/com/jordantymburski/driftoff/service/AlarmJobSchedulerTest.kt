@@ -17,7 +17,7 @@ import java.util.Date
 
 class AlarmJobSchedulerTest {
     companion object {
-        private val ACTION_SIMULATED = "com.jordantymburski.driftoff.test.SIMULATED"
+        private const val ACTION_SIMULATED = "com.jordantymburski.driftoff.test.SIMULATED"
     }
 
     /**

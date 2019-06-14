@@ -21,7 +21,7 @@ android {
     }
 }
 
-// Only allow open mockable annotation when running test variants
+// Only allow open mock annotation when running test variants
 android.applicationVariants.all { variant ->
     boolean hasTest = gradle.startParameter.taskNames.find {it.contains("test") || it.contains("Test")} != null
     if (hasTest) {
